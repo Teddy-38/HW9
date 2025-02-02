@@ -15,11 +15,32 @@ public class Main {
         System.out.println("Task2");
         int[] weekend = {1000, 2000, 3000, 4000, 5000};
         int minAmount = weekend[0];
+        int maxAmount = weekend[0];
+
         for (int i = 1; i < weekend.length; i++) {
             if (weekend[i] < minAmount) {
                 minAmount = weekend[i];
             }
-        }
-        System.out.println("Минимальная сумма трат за неделю составила " + minAmount + " рублей.");
+            if (weekend[i] > maxAmount) {
+                maxAmount = weekend[i];
             }
         }
+
+        System.out.println("Минимальная сумма трат за неделю составила " + minAmount + " рублей.");
+        System.out.println("Максимальная сумма трат за неделю составила " + maxAmount + " рублей.");
+        System.out.println("Task3");
+        int[] speed = {1000, 2000, 3000, 4000, 5000};
+        int weeks = 4;
+        int avg = 0;
+        int sum1 = 0;
+        for (int i : speed) {
+            sum1 += i;
+        }
+        avg = sum1 / weeks;
+        System.out.println("Средняя сумма трат за месяц составила "+ avg + " рублей");
+        System.out.println("Task4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length-1; i >=0 ; i--) {
+            System.out.print(reverseFullName[i]);}
+    }
+}
