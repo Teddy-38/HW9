@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task1");
@@ -29,18 +31,20 @@ public class Main {
         System.out.println("Минимальная сумма трат за неделю составила " + minAmount + " рублей.");
         System.out.println("Максимальная сумма трат за неделю составила " + maxAmount + " рублей.");
         System.out.println("Task3");
-        int[] speed = {1000, 2000, 3000, 4000, 5000};
-        int weeks = 4;
-        int avg = 0;
-        int sum1 = 0;
-        for (int i : speed) {
-            sum1 += i;
+        double[] sum1 = {1000, 2000, 3000, 4000, 5000};
+        double totalSum = 0;
+        for (double num : sum1) {
+            totalSum += num;
         }
-        avg = sum1 / weeks;
-        System.out.println("Средняя сумма трат за месяц составила "+ avg + " рублей");
+        double average = totalSum / sum1.length;
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
         System.out.println("Task4");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length-1; i >=0 ; i--) {
-            System.out.print(reverseFullName[i]);}
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
+        }
+        System.out.print(Arrays.toString(reverseFullName));
     }
 }
